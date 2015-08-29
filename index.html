@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="Victor Nogueira">
+  <title>Zerando Jogos Digitais</title>
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <style type="text/css">
+  /*
+   * Copyright (c) 2013 Thibaut Courouble
+   * http://www.cssflow.com
+   *
+   * Licensed under the MIT License:
+   * http://www.opensource.org/licenses/mit-license.php
+   *
+   * View the Sass/SCSS source at:
+   * http://www.cssflow.com/snippets/task-list/demo/scss
+   *
+   * Original PSD by Wassim Bourguiba: http://goo.gl/OUpkfy
+   */
+
+  @import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+
+  body {
+    font: 13px/20px 'Lucida Grande', Verdana, sans-serif;
+    color: #404040;
+    background: #f2f8fc;
+  }
+
+  .tasks {
+    margin: 40px auto;
+    width: 450px;
+    background: white;
+    border: 1px solid #cdd3d7;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .tasks-header {
+    position: relative;
+    line-height: 24px;
+    padding: 7px 15px;
+    color: #5d6b6c;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.7);
+    background: #f0f1f2;
+    border-bottom: 1px solid #d1d1d1;
+    border-radius: 3px 3px 0 0;
+    background-image: -webkit-linear-gradient(top, #f5f7fd, #e6eaec);
+    background-image: -moz-linear-gradient(top, #f5f7fd, #e6eaec);
+    background-image: -o-linear-gradient(top, #f5f7fd, #e6eaec);
+    background-image: linear-gradient(to bottom, #f5f7fd, #e6eaec);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(0, 0, 0, 0.03);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 1px rgba(0, 0, 0, 0.03);
+  }
+
+  .tasks-title {
+    line-height: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    color: inherit;
+  }
+
+  .tasks-lists {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -11px;
+    padding: 10px 4px;
+    width: 19px;
+    height: 3px;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+  }
+
+  .tasks-lists:before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: #8c959d;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 6px #8c959d, 0 -6px #8c959d;
+    box-shadow: 0 6px #8c959d, 0 -6px #8c959d;
+  }
+
+  .tasks-list-item {
+    display: block;
+    line-height: 24px;
+    padding: 12px 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .tasks-list-item + .tasks-list-item {
+    border-top: 1px solid #f0f2f3;
+  }
+
+  .tasks-list-cb {
+    display: none;
+  }
+
+  .tasks-list-mark {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c4cbd2;
+    border-radius: 12px;
+  }
+
+  .tasks-list-mark:before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -6px;
+    height: 4px;
+    width: 8px;
+    border: solid #39ca74;
+    border-width: 0 0 4px 4px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .tasks-list-cb:checked ~ .tasks-list-mark {
+    border-color: #39ca74;
+  }
+
+  .tasks-list-cb:checked ~ .tasks-list-mark:before {
+    display: block;
+  }
+
+  .tasks-list-desc {
+    font-weight: bold;
+    color: #8a9a9b;
+  }
+
+  .tasks-list-cb:checked ~ .tasks-list-desc {
+    color: #34bf6e;
+    text-decoration: line-through;
+  }
+
+  .tasks-list-doing {
+    color: orange;
+  }
+
+  header img {
+    max-width: 100%;
+  }
+  </style>
+</head>
+<body>
+  <section class="tasks">
+    <header class="tasks-header">
+      <h2 class="tasks-title"><a href="http://jogosdigitais.cesed.br/"><img src="http://i.imgur.com/kGbrdbu.png" alt="Zerando Jogos Digitais"></a></h2>
+    </header>
+    <fieldset class="tasks-list">
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Laboratório De Jogos 2D</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Programação Básica</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Fundamentos De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Desenho Básico</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] História Dos Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Técnicas De Animação 2D</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Desenho Vetorial</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 1] Linguagem Audiovisual Dos Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 2] Laboratório De Jogos 3D</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 2] Projeto De Algoritmos</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Level 2] Design De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Level 2] Desenho De Personagens</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Level 2] Indústria E Cultura Dos Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 2] Computação Gráfica 3D Básica</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Level 2] Pintura Digital</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 2] Roteiro Multilinear Interativo</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Laboratório De Jogos 3D II</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Programação Orientada A Objetos</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Metodologia De Projeto De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Arte Conceitual</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Técnicas De Animação 3D</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Projeto Audiovisual De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Matemática Aplicada A Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 3] Inglês Técnico</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Laboratório De Jogos 3D III</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Inteligência Artificial</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Metodologia Científica</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Worldbuilding</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Level 4] Computação Gráfica 3D Avançada</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Interfaces De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Física Aplicada A Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 4] Lógica Aplicada A Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 5] Laboratório De Jogos Em Rede</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 5] Tópicos Especiais Em Jogos Digitais I</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 5] Psicologia Cognitiva</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 5] Empreendedorismo</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 5] Serious Games</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 5] Projeto Integrado De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Level 6] Laboratório Avançado De Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 6] Tópicos Especiais Em Jogos Digitais II</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 6] Ética Em Jogos Digitais</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 6] Marketing Digital</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb" checked> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 6] Direito Digital</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc">[Level 6] Trabalho De Conclusão De Curso</span> </label>
+      <label class="tasks-list-item"> <input disabled="disabled" type="checkbox" class="tasks-list-cb"> <span class="tasks-list-mark"></span> <span class="tasks-list-desc tasks-list-doing">[Cow Level] Geometria Analítica</span> </label>
+    </fieldset>
+  </section>
+</body>
+</html>
